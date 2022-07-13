@@ -1,4 +1,5 @@
 import { getInteriors, getPaints, getTechnologies, getWheels } from "./database.js"
+import { modelSection } from "./model.js"
 import { Orders } from "./order.js"
 
 const paints = getPaints()
@@ -32,6 +33,7 @@ export const choseSectionHTML = () => {
         ${buildSection("Interior", interiors)}
         ${buildSection("Technology", technologies)}
         ${buildSection("Wheel", wheels)}
+        ${modelSection()}
     </article>
     `
 }

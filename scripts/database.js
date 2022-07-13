@@ -24,7 +24,7 @@ const database = {
         { id: 4, option: "18-inch Pair Spoke Black", price: 850 },
     ],
     customOrders: [
-        { id: 1, paintId: 3, interiorId: 2, technologyId: 3, wheelId: 3 }
+        { id: 1, paintId: 3, interiorId: 2, technologyId: 3, wheelId: 3, modelId: 1 }
     ],
     orderBuilder: {}
 }
@@ -40,6 +40,7 @@ export const setPaint = (id) => database.orderBuilder.paintId = id
 export const setInterior = (id) => database.orderBuilder.interiorId = id
 export const setTechnology = (id) => database.orderBuilder.technologyId = id
 export const setWheel = (id) => database.orderBuilder.wheelId = id
+export const setModel = (id) => database.orderBuilder.modelId = id
 
 export const addCustomOrder = () => {
 
@@ -47,7 +48,8 @@ export const addCustomOrder = () => {
     if (database.orderBuilder.paintId &&
         database.orderBuilder.interiorId &&
         database.orderBuilder.technologyId &&
-        database.orderBuilder.wheelId) {
+        database.orderBuilder.wheelId &&
+        database.orderBuilder.modelId) {
 
         // Copy the current state of user choices
         const newOrder = { ...database.orderBuilder }
