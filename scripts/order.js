@@ -12,7 +12,13 @@ const buildOrderListItem = (order) => {
     const foundTechnology = technologies.find((technology) => technology.id === order.technologyId)
     const foundWheels = wheels.find((wheel) => wheel.id === order.wheelId)
 
-    const totalCost = foundPaint.price + foundInterior.price + foundTechnology.price + foundWheels.price
+    let totalCost = foundPaint.price + foundInterior.price + foundTechnology.price + foundWheels.price
+
+    if (order.modelId === 2) {
+        totalCost *= 1.5
+    } else if (order.modelId === 3) {
+        totalCost *= 2.25
+    }
 
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
