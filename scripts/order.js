@@ -30,7 +30,7 @@ export const Orders = () => {
 
     let html = "<ul>"
 
-    const listItems = orders.map(buildOrderListItem)
+    const listItems = orders.map((order) => buildOrderListItem(order))
 
     html += listItems.join("")
     html += "</ul>"
