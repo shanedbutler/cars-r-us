@@ -1,4 +1,4 @@
-import { getInteriors, getPaints, getTechnologies, getWheels } from "./database.js"
+import { getInteriors, getPaints, getTechnologies, getWheels } from "./dataAccess.js"
 import { modelSection } from "./model.js"
 import { Orders } from "./order.js"
 
@@ -17,9 +17,9 @@ const buildSection = (sectionName, optionsArray) => {
     html += `<select id="${lowerCaseName}">`
     html += `<option value="0">Select a ${lowerCaseName} option</option>`
 
-    optionsArray.forEach((option) => { 
-        html += `<option value="${option.id}">${option.option}</option>`
-    })
+    const buildOptions = (option) => html += `<option value="${option.id}">${option.option}</option>`
+
+    optionsArray.forEach(buildOptions)
 
     html += "</select></section>"
     return html

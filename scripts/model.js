@@ -1,4 +1,4 @@
-import { setModel } from "./database.js"
+import { setModel } from "./dataAccess.js"
 
 //set state using change listener
 document.addEventListener("change", (changeEvent) => {

@@ -1,5 +1,5 @@
 import { choseSectionHTML, orderSectionHTML } from "./carstructure.js"
-import { addCustomOrder, setInterior, setPaint, setTechnology, setWheel } from "./database.js"
+import { addCustomOrder, setInterior, setPaint, setTechnology, setWheel } from "./dataAccess.js"
 
 const contentTarget = document.querySelector("#content")
 
