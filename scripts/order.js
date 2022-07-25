@@ -1,4 +1,4 @@
-import { getInteriors, getOrders, getPaints, getTechnologies, getWheels } from "./database.js"
+import { getInteriors, getOrders, getPaints, getTechnologies, getWheels } from "./dataAccess.js"
 
 const paints = getPaints()
 const interiors = getInteriors()
